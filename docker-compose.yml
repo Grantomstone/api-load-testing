@@ -1,0 +1,23 @@
+services:
+  api_1:
+    build: .
+    environment:
+      - INSTANCE_ID=app1
+    restart: unless-stopped
+  api_2:
+    build: .
+    environment:
+      - INSTANCE_ID=app2
+    restart: unless-stopped
+  api_3:
+    build: .
+    environment:
+      - INSTANCE_ID=app3
+    restart: unless-stopped
+  load_balancer:
+    image: caddy:2.11-alpine
+    volumes:
+      - ./caddy_conf:/etc/caddy
+    ports:
+      - 80:80
+      - 443:443
