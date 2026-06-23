@@ -5,3 +5,7 @@ http://localhost {
 		health_uri /health
 	}
 }
+
+http://localhost/dashboard {
+	reverse_proxy grafana:3000
+}
