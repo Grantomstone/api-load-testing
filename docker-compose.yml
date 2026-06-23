@@ -25,4 +25,5 @@ services:
     image: prom/prometheus:main
     ports:
       - 9090:9090
-    volumes: ./prometheus.yml"/etc/prometheus/promotheus.yml:ro
+    volumes:
+      - ./prometheus.yml"/etc/prometheus/promotheus.yml:ro
