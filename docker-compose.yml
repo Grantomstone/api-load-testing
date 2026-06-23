@@ -26,4 +26,4 @@ services:
     ports:
       - 9090:9090
     volumes:
-      - ./prometheus.yml:/etc/prometheus/promotheus.yml:ro
+      - ./prometheus_conf:/etc/prometheus/
