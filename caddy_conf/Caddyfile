@@ -5,3 +5,8 @@ http://localhost {
 		health_uri /health
 	}
 }
+{
+	metrics {
+		per_host
+	}
+}
