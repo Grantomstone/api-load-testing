@@ -6,13 +6,16 @@
 }
 
 api.battlecluster.com {
-	reverse_proxy api_1:8000 api_2:8000 api_3:8000 {
-		lb_policy least_conn
-		lb_try_duration 3s
-		health_uri /health
+	handle /api/* {
+		reverse_proxy api_1:8000 api_2:8000 api_3:8000 {
+			lb_policy least_conn
+			lb_try_duration 3s
+			health_uri /health
+		}
+	}
+
+	handle /dashboard/ {
+		reverse_proxy grafana:3000
 	}
 }
 
-api.battlecluster.com/dashboard {
-	reverse_proxy grafana:3000
-}
