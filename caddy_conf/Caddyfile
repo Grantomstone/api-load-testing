@@ -1,12 +1,19 @@
-http://localhost {
+{
+	metrics {
+		per_host
+		observe_catchall_hosts
+	}
+}
+
+api.battlecluster.com {
 	reverse_proxy api_1:8000 api_2:8000 api_3:8000 {
 		lb_policy least_conn
 		lb_try_duration 3s
 		health_uri /health
 	}
 }
-{
-	metrics {
-		per_host
-	}
+
+api.battlecluster.com/dashboard {
+	uri strip_prefix /dashboard
+	reverse_proxy grafana:3000
 }

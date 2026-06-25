@@ -9,5 +9,8 @@ wheels/
 # Virtual environments
 .venv
 
+# default options
+.env
+
 # project specific files
 grafana_data/
