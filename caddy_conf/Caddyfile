@@ -14,6 +14,5 @@ api.battlecluster.com {
 }
 
 api.battlecluster.com/dashboard {
-	uri strip_prefix /dashboard
 	reverse_proxy grafana:3000
 }
