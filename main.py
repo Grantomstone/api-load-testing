@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from prometheus_fastapi_instrumentator import Instrumentator
 import random
-import time
+import asyncio
 import os
 
 instance = os.getenv("INSTANCE_ID", default="Instance_Unknown")
@@ -18,7 +18,7 @@ async def getRoot():
 @app.get("/api/compute")
 async def compute():
 	work_ms = random.randint(30,500)
-	time.sleep(work_ms /1000)
+	asyncio.sleep(work_ms /1000)
 	return {"result": f"computed in {work_ms}ms", "instance":instance}
 
 @app.get("/health")
