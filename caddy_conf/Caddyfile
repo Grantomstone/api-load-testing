@@ -1,7 +1,6 @@
 {
-	metrics {
-		per_host
-		observe_catchall_hosts
+	servers {
+		metrics
 	}
 }
 
@@ -19,3 +18,6 @@ api.battlecluster.com {
 	}
 }
 
+:2019/metrics {
+	metrics /metrics
+}
