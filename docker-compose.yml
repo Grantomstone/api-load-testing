@@ -34,6 +34,8 @@ services:
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=password123
       - GF_SERVER_DOMAIN=api.battlecluster.com
+      - GF_SERVER_ROOT_URL=https://api.battlecluster.com/dashboard
+      - GF_SERVER_SERVE_FROM_SUB_PATH=true
     ports:
       - 3000:3000
     volumes:
