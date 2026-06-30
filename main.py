@@ -17,8 +17,8 @@ async def getRoot():
 
 @app.get("/api/compute")
 async def compute():
-	work_ms = random.randint(30,500)
-	asyncio.sleep(work_ms /1000)
+	work_ms = random.randint(50,300)
+	await asyncio.sleep(work_ms /1000)
 	return {"result": f"computed in {work_ms}ms", "instance":instance}
 
 @app.get("/health")
