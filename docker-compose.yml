@@ -14,6 +14,16 @@ services:
     environment:
       - INSTANCE_ID=app3
     restart: unless-stopped
+  api_4:
+    build: .
+    environment:
+      - INSTANCE_ID=app4
+    restart: unless-stopped
+  api_5:
+    build: .
+    environment:
+      - INSTANCE_ID=app5
+    restart: unless-stopped
   caddy:
     image: caddy:2.11-alpine
     volumes:

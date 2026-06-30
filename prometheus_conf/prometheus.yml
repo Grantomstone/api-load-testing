@@ -8,6 +8,8 @@ scrape_configs:
           - 'api_1:8000'
           - 'api_2:8000'
           - 'api_3:8000'
+          - 'api_4:8000'
+          - 'api_5:8000'
   - job_name: 'caddy'
     static_configs:
       - targets:

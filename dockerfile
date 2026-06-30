@@ -6,5 +6,4 @@ COPY main.py .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["fastapi", "run"]
-
+CMD ["uvicorn" "--workers" "4" "main:app"]
